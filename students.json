@@ -1,0 +1,62 @@
+{
+    "students": {
+      "student": {
+        "Tom": {
+          "id": "1",
+          "name": "Tom",
+          "age": "9",
+          "pet": [
+            {
+              "animal": "dog",
+              "name": "Goldie"
+            }
+          ],
+          "hobby": "football",
+          "favGenre": "Adventure",
+          "siblings": [
+            {
+              "name": "Ben",
+              "age": "3"
+            }
+          ]
+      },
+      "Maria": {
+        "id": "2",
+        "firstName": "Maria",
+        "age": "9",
+        "pet": [
+          {
+            "animal": "cat",
+            "name": "Nemo"
+          },
+          {
+            "animal": "dog",
+            "name": "Dory"
+          }
+        ],
+        "hobby": "tennis",
+        "favGenre": "Fiction",
+        "siblings": []
+      },
+      "Robert": {
+        "id": "3",
+        "firstName": "Robert",
+        "age": "10",
+        "pet": [
+          {
+            "animal": "fish",
+            "name": "Goldie"
+          }
+        ],
+        "hobby": "painting",
+        "favGenre": "Graphic Novels",
+        "siblings": [
+          {
+            "name": "Thijs",
+            "age": "12"
+          }
+        ]
+      }
+    }
+}
+}

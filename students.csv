@@ -1,0 +1,4 @@
+id, name, age, petsName, petsSpecies, hobby, favGenre, siblingName, siblingAge, 
+1, Tom, 9, Goldie, dog, football, adventure, Ben, 3,
+2, Maria, 9, Nemo, cat, tennis, fiction,,,
+3, Robert, 10, Goldie, fish, painting, comic, Thijs, 12,
