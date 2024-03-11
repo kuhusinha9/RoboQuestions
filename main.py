@@ -12,9 +12,9 @@ client = OpenAI(
 name = input("Enter the name of the student. \n")
 data = get_student_data(name)
 
-reading=input("Enter the filename (with extention) that the student har read \n")
+reading=input("Enter the filename (with extention) that the student has read \n")
 with open(f"stories/{reading}", 'r', encoding='utf-8') as f:
-    text= f.read()
+  text= f.read()
 
 completion = client.chat.completions.create(
   model="gpt-3.5-turbo",
@@ -29,4 +29,5 @@ completion = client.chat.completions.create(
 
 )
 
-print(completion.choices[0].message.content)
+with open("outputs.txt", "w") as out:
+  out.write(completion.choices[0].message.content)
