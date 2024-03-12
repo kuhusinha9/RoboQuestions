@@ -1,7 +1,4 @@
 import os
-import openai
-from openai import OpenAI
-from dotenv import load_dotenv
 from json_converter import get_student_data
 import steps
 
@@ -16,6 +13,8 @@ else:
   print("Invalid filename, opening default chapter")
   with open(f"stories/chapter25.txt", 'r', encoding='utf-8') as f:
     text= f.read()
+
+additional= input("Add any additional information here \n")
 
 result = steps.generateQuestions(text)
 

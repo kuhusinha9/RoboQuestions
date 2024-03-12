@@ -11,7 +11,13 @@ This should be formatted as such-
 
 OPENAI_API_KEY = 'your_key_here'
 
-## 
+## How to run
+ `python main.py`
+ Then enter the name of a student and a filename from the stories folder.
+ Enter any additional information
+ The results currently save in output.txt
+ Dutch story text generates questions in dutch.
+
 ## What is in each file or folder
 ### main.py
 This is what is the main script to run

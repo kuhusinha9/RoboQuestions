@@ -93,3 +93,14 @@ def generateQuestions(inputs):
     temperature= 1
     )
     return completion.choices[0].message.content 
+
+def rankQuestions(questions):
+    completion = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "Reorder the following questions by importance, given an objective of inciting reflection."},
+        {"role": "system", "content": questions},
+    ],
+    temperature= 0.2
+    )
+    return completion.choices[0].message.content
