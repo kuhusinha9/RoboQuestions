@@ -1,4 +1,4 @@
-import os
+
 
 def save(functionName, story, result):
     with open(f"checkpoints/{functionName}_{story}.txt", 'w', encoding='utf-8') as f:
