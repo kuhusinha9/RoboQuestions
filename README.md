@@ -25,7 +25,7 @@ This is what is the main script to run
 ### steps.py
 The subcomponents and API calls are in this file
 
-### json_converster.py
+### json_converter.py
 This converts data in json files to string scripts
 
 ### data
