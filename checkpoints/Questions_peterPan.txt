@@ -1,0 +1,19 @@
+;1: How do you think you would react if you found a mysterious shadow in your room like Mrs. Darling did in the story? 
+ 1.1: Would you be scared, or would you be curious? 
+ 1.2: What do you think you might do with the shadow?
+
+;2: Wendy and her brothers get to meet Peter Pan, a character from their stories, how would you feel if you got a chance to meet a character from one of your favorite fantasy books? 
+ 2.1: Who would you like to meet and why? 
+ 2.2: What would you do or talk about with them?
+
+;3: Nana, the dog in the story, has a unique role in the Darling family. If Kitty, your cat, could have any responsibility in your household, what would it be?
+ 3.1: Do you think Kitty would be good at her job? Why or why not? 
+ 3.2: What might be some funny scenarios that could happen?
+
+;4: Just like you love to design games, the children in Peter Pan love to go on adventures. If you were to design a game about an adventure in Neverland, what would it be like?
+ 4.1: What would the objectives of the game be? 
+ 4.2: Would there be any dangers or obstacles to overcome?
+
+;5: How do you think you would feel if you saw someone flying in and out of your window at night, just like Peter Pan was seen by Mrs. Darling?
+ 5.1: Would you want to fly too? Why or why not?
+ 5.2: If you could fly anywhere, where would you go?

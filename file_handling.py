@@ -2,6 +2,7 @@ import ebooklib
 from ebooklib import epub
 from lxml import html
 import pdfquery
+import json
 
 
 def epub_extract(filename, chapNum):
@@ -22,6 +23,7 @@ def epub_extract(filename, chapNum):
             c+=1
         except:
             pass
+    return full_text
 
 def pdf_extract(filename, pageNum, start = 0):
     pdf = pdfquery.PDFQuery(f"stories/{filename}")
@@ -40,3 +42,37 @@ def save(functionName, story, result):
 def get(functionName, story):
     with open(f"checkpoints/{functionName}_{story}.txt", 'r', encoding='utf-8') as f:
         return f.read()
+    
+def to_json(questions, book, student):
+    d={}
+    count = 1
+    #questions=questions.replace("\n", "")
+    for number in questions.strip().split(";"):
+        if number == "":
+            continue
+        else:
+            temp_dict = {}
+            n = number.strip().split("\n")
+            if "" in n:
+                n.remove("")
+            for q in n:
+                temp=(q.split(":"))
+                temp_dict[temp[0]]=temp[1]
+            d[count]=temp_dict
+            count += 1
+
+    try:
+        # Load existing data from the JSON file
+        with open("question_database.json", 'r') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        # If the file doesn't exist, initialize with an empty dictionary
+        data = {}
+
+    # Add new questions with the given label
+    data[f"{student}_{book}"] = d
+
+    # Write the updated data back to the JSON file
+    with open("question_database.json", 'w') as file:
+        json.dump(data, file, indent=4)
+    

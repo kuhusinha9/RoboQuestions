@@ -1,19 +1,19 @@
-1. Question: How did you feel when Tom convinced his friends to whitewash the fence for him?
-    - Follow-up: Would you try to convince your friends to do your tasks like Tom did? Why or why not?
-    - Follow-up: How would you feel if someone tricked you into doing their work?
-    
-2. Question: Can you relate Tom's mischief and playful nature to any of your pets' behaviours? 
-    - Follow-up: Can you share any funny or mischievous story about Nemo or Dory?
-    - Follow-up: Would you ever try to make them behave better like Aunt Polly does with Tom? 
+;1: How do you think Tom managed to convince his friends to do his work? 
+ 1.1: Can you think of a game you could create that could make a chore like cleaning your room fun? 
+ 1.2: How could you change the rules of this game so that it might convince your friends to join in?
 
-3. Question: Like Tom spends time daydreaming, do you ever find yourself daydreaming during your day? 
-    - Follow-up: What kind of scenarios do you imagine when you daydream?
-    - Follow-up: Do you think daydreaming is good or bad? Why?
+;2: Do you think Tom likes daydreaming and why? 
+ 2.1: Can you describe a character from your favorite fantasy book that also likes to daydream? 
+ 2.2: Could you suggest a new adventure that Tom might daydream about based on one of your fantasy books?
 
-4. Question: How do you feel about Tom's feelings for the new girl in the garden, forgetting about his former crush?
-    - Follow-up: Have you ever changed your mind about liking something or someone the way Tom does? 
-    - Follow-up: How do you handle such changes or how would you like to handle such changes?
+;3: When Tom meets the new girl in the garden it changes his feelings. How do you think meeting someone new can change how you feel? 
+ 3.1: Have you had any experiences like this, maybe when meeting a new friend at school? 
+ 3.2: How would you design a game that involves meeting new characters who change the way the game is played?
 
-5. Question: Tom seems like he doesn't like working and prefers playing. Do you feel the same about school work and playing tennis?
-    - Follow-up: How would you balance the fun and work in your life?
-    - Follow-up: What would you say to your friends if they try to skip their work or tasks to play games or sports?
+;4: Tom tries to avoid getting in trouble with Aunt Polly. Do you think Tom should always be honest with Aunt Polly, and why? 
+ 4.1: Can you think of a time when you had to be honest, even though it was hard?
+ 4.2: If you could design a game about this scenario, what would the player have to do?
+
+;5: How do you think Kitty would react if they discovered a boy under their bed, like the old lady found Tom?
+ 5.1: Do you think Kitty would be scared or would Kitty join in on the adventure?
+ 5.2: How would you add Kitty to your favorite game, what would Kitty's abilities be?

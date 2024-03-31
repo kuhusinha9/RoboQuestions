@@ -89,7 +89,7 @@ def generateQuestions(inputs,studentInfo=""):
         {"role": "system", "content": "You are a teaching assistant for an elementary school classroom. You write questions that help the students connect with what they are reading. You get the information about the story and student when available. The questions are about getting the student to speak about themselves and their thoughts on the story."},
         {"role": "system", "content": inputs},
         {"role": "system", "content": studentInfo},
-        {"role": "system", "content": "Create a list of 5 questions, with appropriate follow up questions for each."},
+        {"role": "system", "content": "Create a list of 5 main questions, with appropriate follow up questions for each. Only ask 1 question per line. Format it as follows ' ;1: [main question] \n 1.1: [follow-up] \n 1.2: [follow-up] \n ;2: [main question]...'. "},
         {"role": "system", "content": "Make sure the questions are conversational and fit for an 8 year old."}
     ],
     temperature= 1
@@ -130,3 +130,14 @@ def findSummary(title, language="english"):
     temperature= 0.2
     )
     return completion.choices[0].message.content 
+
+def translate(text):
+    completion = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "Translate the following text to Dutch, in words that an eight year old might use."},
+        {"role": "system", "content": text},
+    ],
+    temperature= 0.2
+    )
+    return completion.choices[0].message.content

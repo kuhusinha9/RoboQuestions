@@ -56,6 +56,20 @@
             "age": "12"
           }
         ]
+      },
+      "Ruth": {
+        "id": "4",
+        "firstName": "Ruth",
+        "age": "9",
+        "pet": [
+          {
+            "animal": "cat",
+            "name": "Kitty"
+          }
+        ],
+        "hobby": "designing games",
+        "favGenre": "Fantasy",
+        "siblings": []
       }
     }
 }
