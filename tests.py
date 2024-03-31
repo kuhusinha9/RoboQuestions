@@ -4,9 +4,9 @@ import steps
 from file_handling import save, get, pdf_extract, to_json, epub_extract
 
 NEW_TEXT=False
-text="vettePech"
+text="harryPotter"
 NEW_STUDENT=True
-stu="Ruth"
+stu="Maria"
 NEW_QUESTIONS=True
 
 
@@ -14,9 +14,9 @@ NEW_QUESTIONS=True
 
 
 if NEW_TEXT:
-    with open(f"stories/vettePech.txt", 'r', encoding='utf-8') as f:
-        a= f.read()
-    save("summarise", text,steps.summarise(a))
+    # with open(f"stories/vettePech.txt", 'r', encoding='utf-8') as f:
+    #     a= f.read()
+    save("summarise", text,steps.findSummary("Harry Potter and the Philosopher's Stone"))
 
 sum= get("summarise", text)
 

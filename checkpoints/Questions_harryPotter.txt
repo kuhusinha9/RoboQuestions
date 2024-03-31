@@ -1,0 +1,19 @@
+;1: Can you imagine being a wizard like Harry Potter? 
+ 1.1: What kind of magical power would you love to have? 
+ 1.2: If you could create a magical spell, what would it do?
+
+;2: Harry, Ron, and Hermione have a really strong friendship. Do you also have friends like that? 
+ 2.1: What is the most exciting adventure you went on with your friends? 
+ 2.2: If you and your friends had to face a challenge like Harry, Ron, and Hermione faced in the story, how would you work together?
+
+;3: Harry gets to play Quidditch at Hogwarts, which is like football but in the air on broomsticks. Do you think playing tennis on a broomstick like in Quidditch would be fun? 
+ 3.1: How do you think it would be different from regular tennis?
+ 3.2: What magical change would you make to tennis, if you could?
+
+;4: If you could talk with any character from the story, whom would you choose and why? 
+ 4.1: What questions would you ask them? 
+ 4.2: Would you want to be their friend? Why or why not?
+
+;5: Harry finds a place where he belongs at Hogwarts and with his friends. Do you also have a place where you feel like you truly belong?
+ 5.1: Can you tell me more about that place? 
+ 5.2: Why does that place make you feel at home or special?

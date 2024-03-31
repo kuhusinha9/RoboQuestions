@@ -296,31 +296,112 @@
             " 5.2": " In case you felt like Bram, do you think spending some time with Goldie can help you feel better?"
         }
     },
-    "Ruth_vettePech": {
+    "Ruth_harryPotter": {
         "1": {
-            "1": " Did you like the story about Bram and his trouble at the start of the school year? ",
-            " 1.1": " What was your favourite part? ",
-            " 1.2": " Was there any part you didn't like?"
+            "1": " How do you feel about Harry Potter finding out about his wizarding heritage? ",
+            " 1.1": " Would you like to suddenly discover something magical about yourself, like Harry did?",
+            " 1.2": " How do you think Kitty would react if you suddenly found out you were a wizard?"
         },
         "2": {
-            "2": " Can you relate to Bram when he felt embarrassed because he accidentally hid in the girls' bathroom? ",
-            " 2.1": " How would you handle a similar situation if it happened to you at school?",
-            " 2.2": " How would you feel if something similar happened to one of your friends?"
+            "2": " Are there any puzzles or challenges in the book you'd like to use in your own game designs? ",
+            " 2.1": " Can you tell me more about how you would use the three-headed dog as part of your game?",
+            " 2.2": " How would you make solving Devil's Snare a fun challenge in your game?"
         },
         "3": {
-            "3": " In what ways do you think Bram's experience is similar to or different from your experience at school?",
-            " 3.1": " Have you ever had to start a new school year after a not-so-great summer vacation?",
-            " 3.2": " Has there been anything challenging for you at school so far?"
+            "3": " If you could be friends with one character from the book, who would it be and why? ",
+            " 3.1": " What would you do together with that character?",
+            " 3.2": " How would you help that character in a challenge?"
         },
         "4": {
-            "4": " How do you feel about Bram's decision to pass the \"Cheese Touch\" to Jeremy? ",
-            " 4.1": " Why do you think he did that?",
-            " 4.2": " If you were Jeremy, how would you feel when you received the \"Cheese Touch\"?"
+            "4": " How did you feel when Harry, Ron, and Hermione had to face scary challenges to confront Professor Quirrell?",
+            " 4.1": " If you were with them, how would you have helped?",
+            " 4.2": " Can you name a time when you had to be brave like them?"
         },
         "5": {
-            "5": " You enjoy designing games and reading Fantasy books, right? Can you think of a fantasy game that Bram might enjoy playing to help him navigate through his school year?",
-            " 5.1": " How would playing that game help Bram?",
-            " 5.2": " Can you imagine what kind of adventures Bram could have in that game?"
+            "5": " How did it make you feel when Harry found a place where he belongs and friends who care for him?",
+            " 5.1": " What does belonging mean to you?",
+            " 5.2": " Can you share a time when you felt like you belonged, just like Harry did at Hogwarts?"
+        }
+    },
+    "Tom_harryPotter": {
+        "1": {
+            "1": " How did you feel when you found out Harry was a wizard just like he did? ",
+            "  1.1": " Would you want to be a wizard too? Why or why not?",
+            "  1.2": " If you could choose, what magical power would you like to have?"
+        },
+        "2": {
+            "2": " Harry, Ron, and Hermione had to face some really exciting and daring challenges, didn't they? Which one did you think was the most thrilling? ",
+            "  2.1": " Would you like to participate in a real-life game of wizard's chess or deal with a three-headed dog like they did? ",
+            "  2.2": " How would you use your wits to find a solution if you were in such a situation?"
+        },
+        "3": {
+            "3": " Sometimes we learn from stories we read. What do you think this story taught you about friendship like the one between Harry, Hermione, and Ron? ",
+            "  3.1": " Can you think of a time when you had to stick up for a friend, like Harry, Ron, and Hermione did for each other? ",
+            "  3.2": " Do you think having good friends like Ron and Hermione helped Harry in his adventures? How?"
+        },
+        "4": {
+            "4": " Harry got a new family in Hogwarts after living with the Dursleys. How do you think this made him feel? ",
+            "  4.1": " How important do you think it is to have a place where you feel you belong, like Hogwarts for Harry? ",
+            "  4.2": " Which character would you like to be friends with, if you were at Hogwarts?"
+        },
+        "5": {
+            "5": " Harry had to be very brave to face Professor Quirrell and Voldemort. Can you think of a time when you had to be brave? What happened? ",
+            "  5.1": " If you were in Harry's place, would you be scared or excited? Why?",
+            "  5.2": " How do you think Harry found the courage to face Voldemort?"
+        }
+    },
+    "Robert_harryPotter": {
+        "1": {
+            "1": " If you were to paint a scene from the Harry Potter book, what would it be and why?",
+            " 1.1": " Would you paint the characters as they described in the book or would you add your unique spin to it? ",
+            " 1.2": " What details from the book would you emphasize in your painting to make it feel magical?"
+        },
+        "2": {
+            "2": " Have you ever faced a situation where you had to be brave like Harry, Ron, and Hermione? Could you tell me a little bit about it?",
+            " 2.1": " How did you handle that situation? ",
+            " 2.2": " Did you find the situation easier to handle after reading about the bravery in Harry Potter?"
+        },
+        "3": {
+            "3": " If you could be a character in the Harry Potter series, who would you be and why?",
+            " 3.1": " Would you like to learn magic and attend Hogwarts like that character?",
+            " 3.2": " What kind of adventures would you like to have if you were that character?"
+        },
+        "4": {
+            "4": " If Goldie could be a magical pet like the characters in the Harry Potter story have, what magical abilities would you like it to have?",
+            " 4.1": " Why did you choose those magical abilities?",
+            " 4.2": " How would those abilities help you or make your everyday life more fun?"
+        },
+        "5": {
+            "5": " If Thijs was going to Hogwarts too, do you think you'd be in the same house or different ones? Why?",
+            " 5.1": " What activities or classes do you think you'd enjoy doing together at Hogwarts?",
+            " 5.2": " Would you and Thijs guard a secret like the Philosopher's Stone at Hogwarts, just like Harry, Ron, and Hermione did?"
+        }
+    },
+    "Maria_harryPotter": {
+        "1": {
+            "1": " Can you imagine being a wizard like Harry Potter? ",
+            " 1.1": " What kind of magical power would you love to have? ",
+            " 1.2": " If you could create a magical spell, what would it do?"
+        },
+        "2": {
+            "2": " Harry, Ron, and Hermione have a really strong friendship. Do you also have friends like that? ",
+            " 2.1": " What is the most exciting adventure you went on with your friends? ",
+            " 2.2": " If you and your friends had to face a challenge like Harry, Ron, and Hermione faced in the story, how would you work together?"
+        },
+        "3": {
+            "3": " Harry gets to play Quidditch at Hogwarts, which is like football but in the air on broomsticks. Do you think playing tennis on a broomstick like in Quidditch would be fun? ",
+            " 3.1": " How do you think it would be different from regular tennis?",
+            " 3.2": " What magical change would you make to tennis, if you could?"
+        },
+        "4": {
+            "4": " If you could talk with any character from the story, whom would you choose and why? ",
+            " 4.1": " What questions would you ask them? ",
+            " 4.2": " Would you want to be their friend? Why or why not?"
+        },
+        "5": {
+            "5": " Harry finds a place where he belongs at Hogwarts and with his friends. Do you also have a place where you feel like you truly belong?",
+            " 5.1": " Can you tell me more about that place? ",
+            " 5.2": " Why does that place make you feel at home or special?"
         }
     }
 }
