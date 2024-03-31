@@ -133,5 +133,194 @@
             " 5.1": " Would you want to fly too? Why or why not?",
             " 5.2": " If you could fly anywhere, where would you go?"
         }
+    },
+    "Maria_peterPan": {
+        "1": {
+            "1": " Can you tell me why you think Wendy believes in Peter Pan?",
+            " 1.1": " How does Wendy's belief make you feel about her?",
+            " 1.2": " Can you think of anything you believe in that others might find hard to believe, like Wendy and Peter Pan?"
+        },
+        "2": {
+            "2": " How would you feel if you were Peter Pan, sneaking into the nursery at night?",
+            " 2.1": " What would you do differently if you were Peter?",
+            " 2.2": " Would you like to have adventures like Peter Pan? Why?"
+        },
+        "3": {
+            "3": " Imagine you are Mrs. Darling and you discover Peter's shadow. What would your reaction be?",
+            " 3.1": " Why would you react that way?",
+            " 3.2": " Have you ever found anything strange or surprising like Mrs. Darling?"
+        },
+        "4": {
+            "4": " Do you think Mr. Darling did the right thing by tying Nana up in the yard?",
+            " 4.1": " Why do you think it was right or wrong?",
+            " 4.2": " If you have Nemo and Dory with you, how would you have handled the situation differently?"
+        },
+        "5": {
+            "5": " You love playing tennis - If Peter Pan came by and asked you to take him to your tennis class, what would you do?",
+            " 5.1": " Why would you make this decision?",
+            " 5.2": " Can you think of a fun or interesting adventure you could have with Peter Pan at a tennis class?"
+        }
+    },
+    "Tom_peterPan": {
+        "1": {
+            "1": " If you were Wendy, would you believe that Peter Pan exists? Why or why not? ",
+            " 1.1": " Are there any imaginary friends or characters from your favorite books that you've ever wished were real? ",
+            " 1.2": " How about Ben? Do you think he would believe in Peter Pan?"
+        },
+        "2": {
+            "2": " How do you feel when you have to look after Ben, like Wendy looks after John and Michael in the story?",
+            " 2.1": " Can you share a particular time when you had to take care of Ben?",
+            " 2.2": " Do you think it is always fun or can it sometimes be hard?"
+        },
+        "3": {
+            "3": " Can you describe how you think the Darling's dog Nana does as a nursery keeper?",
+            " 3.1": " How would Goldie react if you had a night visit from someone like Peter Pan?",
+            " 3.2": " Do you believe Goldie could protect Ben just like Nana protects the Darling children?"
+        },
+        "4": {
+            "4": " If Peter Pan visited your home and invited you to Neverland, would you go? ",
+            " 4.1": " What kind of adventures would you like to experience in Neverland?",
+            " 4.2": " Would you invite Ben to come along on your adventures? Why or why not?"
+        },
+        "5": {
+            "5": " How would you feel if you were the Darling children and your parents left for a party, and you then you saw Peter Pan in your room? ",
+            " 5.1": " How do you think Ben would react if the same thing happened at your home? ",
+            " 5.2": " What steps would you take to protect yourself and Ben just like the Darling children did in the story?"
+        }
+    },
+    "Robert_peterPan": {
+        "1": {
+            "1": " How do you feel when you read about Peter Pan's adventures in the nursery?",
+            " 1.1": " Do you wish you could have such adventures?",
+            " 1.2": " How would you react if Peter Pan came into your room?"
+        },
+        "2": {
+            "2": " Imagine if Goldie could do something like Nana, what would you want Goldie to do?",
+            " 2.1": " Would you want Goldie to protect you like Nana watching over the Darling children?",
+            " 2.2": " What fun things would you do with Goldie if she could do other things?"
+        },
+        "3": {
+            "3": " In the story, Mrs. Darling kept Peter Pan's shadow. If you found a mysterious object in your home, what would you do with it?",
+            " 3.1": " Would you show it to Thijs or keep it a secret?",
+            " 3.2": " Would it make you curious or scared? Why?"
+        },
+        "4": {
+            "4": " If you could meet any of the characters from the story, who would you choose and why?",
+            " 4.1": " Would you ask them anything or do something special?",
+            " 4.2": " Would you introduce them to Thijs and how do you think Thijs would react?"
+        },
+        "5": {
+            "5": " Do you see any similarities between your family dynamics and the Darling family?",
+            " 5.1": " Do you have similar roles or behaviors like Wendy, John, or Michael?",
+            " 5.2": " How do you think your family would react to a visit from Peter Pan?"
+        }
+    },
+    "Maria_vettePech": {
+        "1": {
+            "1": " How do you think Bram felt when he accidentally hid in the girls' bathroom?",
+            " 1.1": " Have you ever been in a similar embarrassing situation? How did you feel?",
+            " 1.2": " What would you have done if you were in Bram's place?"
+        },
+        "2": {
+            "2": " Can you relate to the 'Cheese Touch' game in the story? ",
+            " 2.1": " How is it similar or different to any games you and your friends play at school? ",
+            " 2.2": " How would you feel if you were the one stuck with the 'Cheese Touch'?"
+        },
+        "3": {
+            "3": " How do you think your pets, Nemo and Dory, would react if you brought home the 'Cheese Touch'?",
+            " 3.1": " Would they be interested, scared, or unbothered by it?",
+            " 3.2": " How would you try to explain 'Cheese Touch' to them?"
+        },
+        "4": {
+            "4": " Do you think Bram\u2019s experiences and challenges made him stronger?",
+            " 4.1": " Can you remember a challenge you faced when playing tennis? ",
+            " 4.2": " What did you learn from that experience?"
+        },
+        "5": {
+            "5": " If this story was turned into a tennis match, who would be Bram and who would be Jeremy?",
+            " 5.1": " Who would end up winning the match?",
+            " 5.2": " If you could invite Bram and Jeremy to play tennis with you, how would you make it fun for everyone?"
+        }
+    },
+    "Tom_vettePech": {
+        "1": {
+            "1": " How do you think Bram might have felt when he passed the \"Cheese Touch\" to Jeremy?",
+            " 1.1": " Does it remind you of a time when you felt relieved or accomplished in a game of football?",
+            " 1.2": " What would you have done in Bram's situation?"
+        },
+        "2": {
+            "2": " Bram accidentally wound up in the girl's bathroom, how do you think he felt? ",
+            " 2.1": " Can you remember a time when you were embarrassed, much like Bram was?",
+            " 2.2": " What did you do to make yourself feel better after that?"
+        },
+        "3": {
+            "3": " Bram tries to start fresh but ends up facing a lot of challenges. Do you face challenges when you are reading your adventure books?",
+            " 3.1": " What do you do when the story in your book gets tough?",
+            " 3.2": " Why do you think you like reading adventure books?"
+        },
+        "4": {
+            "4": " If Bram had a younger sibling like your brother Ben, how do you think he would act with him? ",
+            " 4.1": " How do you treat your little brother when you are upset about something? ",
+            " 4.2": " Do you think it's important to be kind to your brother all the time, why?"
+        },
+        "5": {
+            "5": " If Bram had a pet dog like Goldie, how do you think it might have changed his school year? ",
+            " 5.1": " How does Goldie make you feel when you're having a rough day?",
+            " 5.2": " Why do you think having a pet can make a difference in your day?"
+        }
+    },
+    "Robert_vettePech": {
+        "1": {
+            "1": " How do you think Bram felt when he had to pass the \"Cheese Touch\" to Jeremy? ",
+            " 1.1": " Have you ever felt like you needed to pass something on to your brother, Thijs?",
+            " 1.2": " Can you imagine a finished painting in your mind and then create it?"
+        },
+        "2": {
+            "2": " Bram hid in the girls' bathroom by accident and then felt embarrassed. ",
+            " 2.1": " Have you ever done something by accident that made you feel embarrassed, too? How did you handle it? ",
+            " 2.2": " Can you think of any characters in the graphic novels you read who also had embarrassing moments?"
+        },
+        "3": {
+            "3": " How do you think Bram felt when everyone in school found out about his secret? ",
+            " 3.1": " Has there ever been a secret you've been worried people would find out about? ",
+            " 3.2": " Can you relate this to any character in the books you read?"
+        },
+        "4": {
+            "4": " What do you think Bram could do to start feeling better at school, based on your own experiences? ",
+            " 4.1": " If you were in Bram's shoes and wanted to make yourself feel better, would you paint something special? What would it be?",
+            " 4.2": " Can Thijs be helpful in such situations when you are feeling down?"
+        },
+        "5": {
+            "5": " Bram needed to overcome many challenges in his new school year. ",
+            " 5.1": " Have you ever had a difficult challenge that made you feel like Bram? ",
+            " 5.2": " In case you felt like Bram, do you think spending some time with Goldie can help you feel better?"
+        }
+    },
+    "Ruth_vettePech": {
+        "1": {
+            "1": " Did you like the story about Bram and his trouble at the start of the school year? ",
+            " 1.1": " What was your favourite part? ",
+            " 1.2": " Was there any part you didn't like?"
+        },
+        "2": {
+            "2": " Can you relate to Bram when he felt embarrassed because he accidentally hid in the girls' bathroom? ",
+            " 2.1": " How would you handle a similar situation if it happened to you at school?",
+            " 2.2": " How would you feel if something similar happened to one of your friends?"
+        },
+        "3": {
+            "3": " In what ways do you think Bram's experience is similar to or different from your experience at school?",
+            " 3.1": " Have you ever had to start a new school year after a not-so-great summer vacation?",
+            " 3.2": " Has there been anything challenging for you at school so far?"
+        },
+        "4": {
+            "4": " How do you feel about Bram's decision to pass the \"Cheese Touch\" to Jeremy? ",
+            " 4.1": " Why do you think he did that?",
+            " 4.2": " If you were Jeremy, how would you feel when you received the \"Cheese Touch\"?"
+        },
+        "5": {
+            "5": " You enjoy designing games and reading Fantasy books, right? Can you think of a fantasy game that Bram might enjoy playing to help him navigate through his school year?",
+            " 5.1": " How would playing that game help Bram?",
+            " 5.2": " Can you imagine what kind of adventures Bram could have in that game?"
+        }
     }
 }

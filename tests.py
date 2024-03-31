@@ -4,16 +4,18 @@ import steps
 from file_handling import save, get, pdf_extract, to_json, epub_extract
 
 NEW_TEXT=False
-text="peterPan"
+text="vettePech"
 NEW_STUDENT=True
 stu="Ruth"
 NEW_QUESTIONS=True
 
 
 #a= pdf_extract("TomSawyer.pdf", 30, 6)
-a= epub_extract("PeterPan.epub", 2)
+
 
 if NEW_TEXT:
+    with open(f"stories/vettePech.txt", 'r', encoding='utf-8') as f:
+        a= f.read()
     save("summarise", text,steps.summarise(a))
 
 sum= get("summarise", text)
@@ -37,5 +39,5 @@ if NEW_QUESTIONS:
 questions = get("Questions", text)
 
 to_json(questions,text,stu)
-print("Done")
+print("Done", stu, text)
 

@@ -1,0 +1,19 @@
+;1: Did you like the story about Bram and his trouble at the start of the school year? 
+ 1.1: What was your favourite part? 
+ 1.2: Was there any part you didn't like? 
+
+;2: Can you relate to Bram when he felt embarrassed because he accidentally hid in the girls' bathroom? 
+ 2.1: How would you handle a similar situation if it happened to you at school?
+ 2.2: How would you feel if something similar happened to one of your friends?
+
+;3: In what ways do you think Bram's experience is similar to or different from your experience at school?
+ 3.1: Have you ever had to start a new school year after a not-so-great summer vacation?
+ 3.2: Has there been anything challenging for you at school so far?
+
+;4: How do you feel about Bram's decision to pass the "Cheese Touch" to Jeremy? 
+ 4.1: Why do you think he did that?
+ 4.2: If you were Jeremy, how would you feel when you received the "Cheese Touch"?
+
+;5: You enjoy designing games and reading Fantasy books, right? Can you think of a fantasy game that Bram might enjoy playing to help him navigate through his school year?
+ 5.1: How would playing that game help Bram?
+ 5.2: Can you imagine what kind of adventures Bram could have in that game?
