@@ -1,13 +1,10 @@
 import os
 from json_converter import get_student_data
 import steps
-from pdfTextExtracter import extract
-from handleCheckpoints import save, get
+from file_handling import save, get, pdf_extract
 
-with open("stories/chapter25.txt", 'r', encoding='utf-8') as f:
-    text= f.read()
 
-#a= extract("TomSawyer.pdf", 30, 6)
+#a= pdf_extract("TomSawyer.pdf", 30, 6)
 sum= get("summarise", "tomSawyer")
 char= get("characters", "tomSawyer")
 moti= get("motivations", "tomSawyer")
@@ -16,5 +13,6 @@ connect = get("studentConnection", "tomSawyer")
 
 student= get_student_data("Maria")
 
-save("Observations", "tomSawyer", steps.generateObservations(plot + moti+ char + connect))
+save("Questions", "tomSawyer", steps.generateQuestions(plot + moti+ char, student+connect))
+#print(steps.findSummary("Dodo by Mohana van den Kroonenberg"))
 print("Done")

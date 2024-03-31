@@ -82,24 +82,27 @@ def robotConnections(plot, characters, motivations, robotBio):
     )
     return completion.choices[0].message.content
 
-def generateQuestions(inputs):
+def generateQuestions(inputs,studentInfo=""):
     completion = client.chat.completions.create(
     model="gpt-4",
     messages=[
-        {"role": "system", "content": "You are a teaching assistant for an elementary school classroom. You write lists of questions that help the students, who are eight to eleven years old, connect with what they are reading. You get the information about the story and student when available. The questions are about getting the student to speak about themselves and their thoughts on the story."},
+        {"role": "system", "content": "You are a teaching assistant for an elementary school classroom. You write questions that help the students connect with what they are reading. You get the information about the story and student when available. The questions are about getting the student to speak about themselves and their thoughts on the story."},
         {"role": "system", "content": inputs},
-        {"role": "system", "content": "Create a list of 5 questions."}
+        {"role": "system", "content": studentInfo},
+        {"role": "system", "content": "Create a list of 5 questions, with appropriate follow up questions for each."},
+        {"role": "system", "content": "Make sure the questions are conversational and fit for an 8 year old."}
     ],
     temperature= 1
     )
     return completion.choices[0].message.content 
 
-def generateObservations(inputs):
+def generateObservations(inputs,studentInfo):
     completion = client.chat.completions.create(
     model="gpt-4",
     messages=[
-        {"role": "system", "content": "You are a twelve year old child who likes reading and adventures. Given the following information about a story pick out interesting observations you would tell your friends about."},
+        {"role": "system", "content": "You are a twelve year old child who likes reading and adventures. Given the following information about a story, and information about your friend, pick out interesting observations you would make in a conversation with your friend."},
         {"role": "system", "content": inputs},
+        {"role": "system", "content": studentInfo},
         {"role": "system", "content": "Create a list of 5 observations."}
     ],
     temperature= 1
@@ -116,3 +119,14 @@ def rankQuestions(questions):
     temperature= 0.2
     )
     return completion.choices[0].message.content
+
+def findSummary(title, language="english"):
+    completion = client.chat.completions.create(
+    model="gpt-4",
+    messages=[
+        {"role": "system", "content": f"Based on the following title, generate a plot summary in {language}. Include all important characters and plot moments."},
+        {"role": "system", "content": title}
+    ],
+    temperature= 0.2
+    )
+    return completion.choices[0].message.content 

@@ -2,6 +2,9 @@ import os
 from json_converter import get_student_data
 import steps
 
+version = input("Type 'pipe' or 'direct' to select version\n")
+result = " "
+
 name = input("Enter the name of the student. \n")
 data = get_student_data(name)
 
@@ -15,8 +18,12 @@ else:
     text= f.read()
 
 additional= input("Add any additional information here \n")
-
-result = steps.generateQuestions(text)
+if version == "direct":
+  result = steps.generateQuestions(text)
+elif version == "pipe":
+  result = steps.generateQuestions(text)
+else:
+  print("Invalid version input")
 
 with open("outputs.txt", "w") as out:
   out.write(result)
