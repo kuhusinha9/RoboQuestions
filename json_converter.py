@@ -1,5 +1,23 @@
 import json
  
+'''
+TODO: Info change
+- no names
+-id
+-hobbies
+-pets
+-  ?? ethnicity
+- fav food
+- ? what do you do on a happy day
+- fav books
+- gender
+- fav themes
+- fav subject
+
+TODO: work in dutch from summary stage
+'''
+
+
 # Opening JSON file
 f = open('data/students.json')
  

@@ -43,7 +43,7 @@ def get(functionName, story):
     with open(f"checkpoints/{functionName}_{story}.txt", 'r', encoding='utf-8') as f:
         return f.read()
     
-def to_json(questions, book, student):
+def to_json(questions, book, student, JSONfile):
     d={}
     count = 1
     #questions=questions.replace("\n", "")
@@ -63,7 +63,7 @@ def to_json(questions, book, student):
 
     try:
         # Load existing data from the JSON file
-        with open("question_database.json", 'r') as file:
+        with open(JSONfile, 'r') as file:
             data = json.load(file)
     except FileNotFoundError:
         # If the file doesn't exist, initialize with an empty dictionary

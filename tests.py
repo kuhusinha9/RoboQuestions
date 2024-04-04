@@ -9,35 +9,28 @@ NEW_STUDENT=True
 stu="Maria"
 NEW_QUESTIONS=True
 
-
-#a= pdf_extract("TomSawyer.pdf", 30, 6)
-
-
+ #Create or find a summary of the text
 if NEW_TEXT:
+    #a= pdf_extract("TomSawyer.pdf", 30, 6)
     # with open(f"stories/vettePech.txt", 'r', encoding='utf-8') as f:
     #     a= f.read()
+
+    # save summary to checkpoint file
     save("summarise", text,steps.findSummary("Harry Potter and the Philosopher's Stone"))
 
+# retrive summary from checkpoint file
 sum= get("summarise", text)
 
-if NEW_TEXT:
-   save("characters", text,steps.characters(sum))
-   save("motivations", text,steps.motivations(sum))
-   save("plotPoints", text,steps.plotPoints(sum))
-
-char= get("characters", text)
-moti= get("motivations", text)
-plot= get("plotPoints", text)
-
-student= get_student_data(stu)
-if NEW_TEXT or NEW_STUDENT:
-    save("studentConnection", text, steps.studentConnections(plot,char,moti,student))
-connect = get("studentConnection", text)
-
+# Generate questions based on given information
 if NEW_QUESTIONS:
-    save("Questions", text, steps.generateQuestions(plot + moti+ char, student+connect))
+    # save questions to checkpoint
+    save("Questions", text, steps.pipeline(sum, text, stu, NEW_TEXT, NEW_STUDENT))
+
+# retrieve questions from checkpoint
 questions = get("Questions", text)
 
-to_json(questions,text,stu)
+# save the questions to json database
+to_json(questions,text,stu,"question_database.json")
+
 print("Done", stu, text)
 
