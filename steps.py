@@ -3,9 +3,8 @@ import openai
 from openai import OpenAI
 from dotenv import load_dotenv
 from file_handling import get, save
-from json_converter import get_student_data
+from studentDataScripting import json_data, csv_data
 
-# TODO: rename to be more descriptive
 # TODO:  questions (no followups)-> add observations, followups and jokes/ questions, followups, observations to ChatGPT to generate flow 
 # flow based on engagingness 
 # add notes for thesis
@@ -15,7 +14,7 @@ client = OpenAI(
   api_key=os.environ["OPENAI_API_KEY"]
 )
 
-DEFAULT_INFO="You are part of an educational intervention in schools focused on improving reading motivation in students. You are a robot that has one-on-one conversations with students, talking to them about the book they are reading. The idea is to help students build connections between themselves and their reading material."
+DEFAULT_INFO="You are part of an educational intervention in schools focused on improving reading motivation in students. You are a robot that has one-on-one conversations with students, talking to them about the book they are reading. The intervention helps students build connections between themselves and their reading material."
 
 def summarise(extendedText, language="english"):
     '''
@@ -27,14 +26,13 @@ def summarise(extendedText, language="english"):
     completion = client.chat.completions.create(
     model="gpt-4",
     messages=[
+        {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": f"Summarise the following text in {language}. Keep all important details about characters and plot."},
         {"role": "system", "content": extendedText},
     ],
     temperature= 0.2
     )
     return completion.choices[0].message.content
-
-
 
 def findSummary(title, language="english"):
     '''
@@ -46,6 +44,7 @@ def findSummary(title, language="english"):
     completion = client.chat.completions.create(
     model="gpt-4",
     messages=[
+        {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": f"Based on the following title, generate a plot summary in {language}. Include all important characters and plot moments."},
         {"role": "system", "content": title}
     ],
@@ -62,7 +61,7 @@ def characters(summary):
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "List the charecters in the following text by importance."},
+        {"role": "system", "content": "List the characters in the following text by importance."},
         {"role": "system", "content": summary},
     ],
     temperature= 0.5
@@ -78,7 +77,8 @@ def motivations(summary):
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "List what motivates the story and the charecters in the following text."},
+        {"role": "system", "content": DEFAULT_INFO},
+        {"role": "system", "content": "List what motivates the story and the characters in the following text."},
         {"role": "system", "content": summary},
     ],
     temperature= 1
@@ -94,6 +94,7 @@ def plotPoints(summary):
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
+        {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": "List the key plot events that occur in the following text."},
         {"role": "system", "content": summary},
     ],
@@ -113,6 +114,7 @@ def studentConnections(plot, characters, motivations, studentBio):
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
+        {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": plot},
         {"role": "system", "content": characters},
         {"role": "system", "content": motivations},
@@ -136,6 +138,7 @@ def robotConnections(plot, characters, motivations, robotBio):
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
+        {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": robotBio},
         {"role": "system", "content": plot},
         {"role": "system", "content": characters},
@@ -156,10 +159,10 @@ def generateQuestions(inputs,studentInfo=""):
     completion = client.chat.completions.create(
     model="gpt-4",
     messages=[
-        {"role": "system", "content": "You are a teaching assistant for an elementary school classroom. You write questions that help the students connect with what they are reading. You get the information about the story and student when available. The questions are about getting the student to speak about themselves and their thoughts on the story."},
+        {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": inputs},
         {"role": "system", "content": studentInfo},
-        {"role": "system", "content": "Create a list of 5 main questions, with appropriate follow up questions for each. Only ask 1 question per line. Format it as follows ' ;1: [main question] \n 1.1: [follow-up] \n 1.2: [follow-up] \n ;2: [main question]...'. "},
+        {"role": "system", "content": "Create a list of 5 questions."},
         {"role": "system", "content": "Make sure the questions are conversational and fit for an 8 year old."}
     ],
     temperature= 1
@@ -176,17 +179,17 @@ def generateObservations(inputs,studentInfo=""):
     completion = client.chat.completions.create(
     model="gpt-4",
     messages=[
-        {"role": "system", "content": "You are a twelve year old child who likes reading and adventures. Given the following information about a story, and information about your friend, pick out interesting observations you would make in a conversation with your friend."},
+        {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": inputs},
         {"role": "system", "content": studentInfo},
-        {"role": "system", "content": "Create a list of 5 observations."}
+        {"role": "system", "content": "Create a list of 5 observations you can make based on the story and the student."},
+        {"role": "system", "content": "Make sure the observations are conversational and fit for an 8 year old."}
     ],
     temperature= 1
     )
     return completion.choices[0].message.content 
 
-# not currently in use
-def rankQuestions(questions):
+def reorderResponses(questions):
     '''
     Reorders the questions based on importance 
     questions: (str) a list of questions
@@ -195,7 +198,8 @@ def rankQuestions(questions):
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "Reorder the following questions by importance, given an objective of inciting reflection."},
+        {"role": "system", "content": DEFAULT_INFO},
+        {"role": "system", "content": "The following are a list of 10 things the robot could say. Consider the ways in which a student might respond to these and rearrange and reorder them to facilitate a smooth conversation. Include all 10."},
         {"role": "system", "content": questions},
     ],
     temperature= 0.2
@@ -219,7 +223,7 @@ def translate(text, targetLanguage="Dutch"):
     )
     return completion.choices[0].message.content
 
-def pipeline(summary, text, studentName, NEW_TEXT=True, NEW_STUDENT=True):
+def pipeline(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True):
     '''
     Generates questions based on a summary and the name/ id of the student, running all intermediate functions
     summary: (str) a text summary of a section of a book
@@ -238,12 +242,12 @@ def pipeline(summary, text, studentName, NEW_TEXT=True, NEW_STUDENT=True):
     moti= get("motivations", text)
     plot= get("plotPoints", text)
 
-    student= get_student_data(studentName)
+    student= csv_data(studentId)
     if NEW_TEXT or NEW_STUDENT:
         save("studentConnection", text, studentConnections(plot,char,moti,student))
     connect = get("studentConnection", text)
 
-    return generateQuestions(plot + moti+ char, student+connect)
+    return generateQuestions(plot + moti+ char, student+connect)+ generateObservations(plot + moti+ char, student+connect)
 
 # not currently in use
 def superPrompt(inputs,studentInfo=""):
@@ -254,7 +258,7 @@ def superPrompt(inputs,studentInfo=""):
     completion = client.chat.completions.create(
     model="gpt-4",
     messages=[
-        {"role": "system", "content": "You are a teaching assistant for an elementary school classroom. You write questions that help the students connect with what they are reading. You get the information about the story and student when available. The questions are about getting the student to speak about themselves and their thoughts on the story."},
+        {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": inputs},
         {"role": "system", "content": studentInfo},
         {"role": "system", "content": "Create a list of 5 main questions, with appropriate follow up questions for each. Only ask 1 question per line. Format it as follows ' ;1: [main question] \n 1.1: [follow-up] \n 1.2: [follow-up] \n ;2: [main question]...'. "},
