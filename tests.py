@@ -6,9 +6,9 @@ NEW_TEXT=False
 text="harryPotter"
 NEW_STUDENT=False
 stu=3
-NEW_QUESTIONS=True
-NEW_OBS = True
-NEW_JOKES = True
+NEW_QUESTIONS=False
+NEW_OBS = False
+NEW_JOKES = False
 
  #Create or find a summary of the text
 if NEW_TEXT:
@@ -28,12 +28,12 @@ if NEW_QUESTIONS or NEW_JOKES or NEW_OBS:
     save("Script", text, steps.pipeline(sum, text, stu, NEW_TEXT, NEW_STUDENT, NEW_QUESTIONS,NEW_OBS,NEW_JOKES))
 
 # retrieve questions from checkpoint
-#script = get("Script2", text)
+script = get("Script", text)
 
 #save("AddedFlavor2", text, steps.addFlavour(script))
 #print(script)
 #print(" ")
-#print(steps.reorderResponses(script))
+save("Reordered", text, steps.reorderResponses(script))
 # save the questions to json database
 #to_json(questions,text,stu,"question_database.json")
 

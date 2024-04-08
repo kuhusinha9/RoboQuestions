@@ -1,13 +1,13 @@
 import os
-from studentDataScripting import json_data
+from studentDataScripting import json_data, csv_data
 import steps
 from file_handling import save, get, to_json
 
 version = input("Type 'pipe' or 'direct' to select version\n")
 result = ""
 
-name = input("Enter the id of the student. \n")
-data = get_student_data(name)
+id = input("Enter the id of the student. \n")
+data = csv_data(id)
 
 reading=input("Enter the name of the txt file that the student has read \n")
 if os.path.exists(f"stories/{reading}.txt") and reading != "":
@@ -23,7 +23,7 @@ additional= input("Add any additional information here \n")
 if version == "direct":
   result = steps.generateQuestions(text)
 elif version == "pipe":
-  result = steps.pipeline(text, reading, name)
+  result = steps.pipeline(text, reading, id)
 else:
   print("Invalid version input")
 

@@ -202,27 +202,28 @@ def generateJokes(inputs,studentInfo=""):
         {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": inputs},
         {"role": "system", "content": studentInfo},
-        {"role": "system", "content": "Create a list of jokes or funny statements you can share with the student that relate to the story or the student."},
+        {"role": "system", "content": "Create a list of 5 jokes you can share with the student that relate to the story or the student."},
         {"role": "system", "content": "Make sure the humor is fit for an 8 year old."}
     ],
     temperature= 1
     )
     return completion.choices[0].message.content 
 
-def reorderResponses(questions):
+def reorderResponses(responses):
     '''
     Reorders the questions based on importance 
     questions: (str) a list of questions
     Returns string containing a list of questions 
     '''
     completion = client.chat.completions.create(
-    model="gpt-3.5-turbo",
+    model="gpt-4",
     messages=[
         {"role": "system", "content": DEFAULT_INFO},
-        {"role": "system", "content": "The following are a list of things the robot could say. Consider the ways in which a student might respond to these and rearrange and reorder them to facilitate a smooth conversation. Include all items."},
-        {"role": "system", "content": questions},
+        {"role": "system", "content": "The following are three list of things the robot could say. There is a list of questions, a list of observations and a list of jokes."},
+        {"role": "system", "content": "The aim is to plan out the conversation so that it feels natural to the student you are talking to. Turn these three lists into a single 15 item list, reodering items to make the transitions smoother."},
+        {"role": "system", "content": responses},
     ],
-    temperature= 0.2
+    temperature= 0.5
     )
     return completion.choices[0].message.content
 
