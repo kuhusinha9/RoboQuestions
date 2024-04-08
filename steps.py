@@ -189,6 +189,26 @@ def generateObservations(inputs,studentInfo=""):
     )
     return completion.choices[0].message.content 
 
+def generateJokes(inputs,studentInfo=""):
+    '''
+    Generates jokes about the story and/or the student
+    inputs: (str) any information about the story, can include plot points, motivations, characters, etc
+    studentBio: (str) Optional information about student
+    Returns string containing jokes
+    '''
+    completion = client.chat.completions.create(
+    model="gpt-4",
+    messages=[
+        {"role": "system", "content": DEFAULT_INFO},
+        {"role": "system", "content": inputs},
+        {"role": "system", "content": studentInfo},
+        {"role": "system", "content": "Create a list of jokes or funny statements you can share with the student that relate to the story or the student."},
+        {"role": "system", "content": "Make sure the humor is fit for an 8 year old."}
+    ],
+    temperature= 1
+    )
+    return completion.choices[0].message.content 
+
 def reorderResponses(questions):
     '''
     Reorders the questions based on importance 
@@ -199,7 +219,7 @@ def reorderResponses(questions):
     model="gpt-3.5-turbo",
     messages=[
         {"role": "system", "content": DEFAULT_INFO},
-        {"role": "system", "content": "The following are a list of 10 things the robot could say. Consider the ways in which a student might respond to these and rearrange and reorder them to facilitate a smooth conversation. Include all 10."},
+        {"role": "system", "content": "The following are a list of things the robot could say. Consider the ways in which a student might respond to these and rearrange and reorder them to facilitate a smooth conversation. Include all items."},
         {"role": "system", "content": questions},
     ],
     temperature= 0.2
@@ -223,7 +243,7 @@ def translate(text, targetLanguage="Dutch"):
     )
     return completion.choices[0].message.content
 
-def pipeline(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True):
+def pipeline(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True, NEW_Qs= True, NEW_Obs= True, NEW_Jokes=True):
     '''
     Generates questions based on a summary and the name/ id of the student, running all intermediate functions
     summary: (str) a text summary of a section of a book
@@ -247,7 +267,58 @@ def pipeline(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True):
         save("studentConnection", text, studentConnections(plot,char,moti,student))
     connect = get("studentConnection", text)
 
-    return generateQuestions(plot + moti+ char, student+connect)+ generateObservations(plot + moti+ char, student+connect)
+    if NEW_Qs:
+        save("Questions", text, generateQuestions(plot + moti+ char, student+connect))
+    questions= get("Questions", text)
+
+    if NEW_Obs:
+        save("Observations", text, generateObservations(plot + moti+ char, student+connect))
+    observations= get("Observations", text)
+
+    if NEW_Jokes:
+        save("Jokes", text, generateJokes(plot + moti+ char, student+connect))
+    jokes= get("Jokes", text)
+
+    return questions+observations+jokes
+
+def pipeline2(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True):
+    '''
+    Generates questions based on a summary and the name/ id of the student, running all intermediate functions
+    summary: (str) a text summary of a section of a book
+    text: (str) the name or id of a book for naming the checkpoint files
+    studentName: (str) name/id of student
+    NEW_TEXT: (bool) false if motivations and plot checkpoints already exist, true to generate new ones, true by default
+    NEW_STUDENT: (bool) false if student connection to plot already exists, true to generate new one, true by default
+    Returns string containing questions
+    '''
+    if NEW_TEXT:
+        save("characters", text,characters(summary))
+        save("motivations", text,motivations(summary))
+        save("plotPoints", text,plotPoints(summary))
+
+    char= get("characters", text)
+    moti= get("motivations", text)
+    plot= get("plotPoints", text)
+
+    student= csv_data(studentId)
+    if NEW_TEXT or NEW_STUDENT:
+        save("studentConnection", text, studentConnections(plot,char,moti,student))
+    connect = get("studentConnection", text)
+
+    return generateQuestions(plot + moti+ char, student+connect)
+
+def addFlavour(questions):
+    completion = client.chat.completions.create(
+    model="gpt-4",
+    messages=[
+        {"role": "system", "content": DEFAULT_INFO},
+        {"role": "system", "content": questions},
+        {"role": "system", "content": "Based on the given questions, add observations to lead into the questions and possible follow-up questions. Add additional jokes as follow up or add humor wherever appropriate."},
+        {"role": "system", "content": "Make sure the text is conversational and fit for an 8 year old."}
+    ],
+    temperature= 1
+    )
+    return completion.choices[0].message.content
 
 # not currently in use
 def superPrompt(inputs,studentInfo=""):

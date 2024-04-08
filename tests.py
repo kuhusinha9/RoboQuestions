@@ -4,9 +4,11 @@ from file_handling import save, get, pdf_extract, to_json, epub_extract
 
 NEW_TEXT=False
 text="harryPotter"
-NEW_STUDENT=True
+NEW_STUDENT=False
 stu=3
-NEW_QUESTIONS=False
+NEW_QUESTIONS=True
+NEW_OBS = True
+NEW_JOKES = True
 
  #Create or find a summary of the text
 if NEW_TEXT:
@@ -21,17 +23,17 @@ if NEW_TEXT:
 sum= get("summarise", text)
 
 # Generate questions based on given information
-if NEW_QUESTIONS:
+if NEW_QUESTIONS or NEW_JOKES or NEW_OBS:
     # save questions to checkpoint
-    save("Script", text, steps.pipeline(sum, text, stu, NEW_TEXT, NEW_STUDENT))
+    save("Script", text, steps.pipeline(sum, text, stu, NEW_TEXT, NEW_STUDENT, NEW_QUESTIONS,NEW_OBS,NEW_JOKES))
 
 # retrieve questions from checkpoint
-script = get("Script", text)
+#script = get("Script2", text)
 
+#save("AddedFlavor2", text, steps.addFlavour(script))
 #print(script)
-print(" ")
-print(steps.reorderResponses(script))
-
+#print(" ")
+#print(steps.reorderResponses(script))
 # save the questions to json database
 #to_json(questions,text,stu,"question_database.json")
 
