@@ -16,7 +16,8 @@ with open("data/books.csv","r", encoding='utf-8') as f:
         text=book[1].strip()
         if text != "":
             #Create or find a summary of the text
-            NEW_TEXT= (False if exists(f"checkpoints/{text}.txt") else True)
+            NEW_TEXT= (False if exists(f"checkpoints/summarise_{text}.txt") else True)
+            print(text, NEW_TEXT)
             if NEW_TEXT:
                 # save summary to checkpoint file
                 save("summarise", text,steps.findSummary(book[0], "dutch"))
@@ -25,14 +26,14 @@ with open("data/books.csv","r", encoding='utf-8') as f:
             sum= get("summarise", text)
 
             # Generate questions based on given information
-            # if NEW_QUESTIONS or FLAVOR:
-            #     # save questions to checkpoint
-            #     save("Script", text, steps.pipeline(sum, text, stu, NEW_TEXT, NEW_STUDENT, NEW_QUESTIONS))
+            if NEW_QUESTIONS or FLAVOR:
+                # save questions to checkpoint
+                save("Script", text, steps.pipeline(sum, text, stu, NEW_TEXT, NEW_STUDENT, NEW_QUESTIONS))
 
-            # responses=get("Script", text)
+            responses=get("Script", text)
 
-            # # save the questions to json database
-            # to_json(responses,text,stu,"question_database1.json")
+            # save the questions to json database
+            to_json(responses,text,stu,"question_database1.json")
 
 print("Done", stu)
 
