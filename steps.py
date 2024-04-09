@@ -149,7 +149,7 @@ def robotConnections(plot, characters, motivations, robotBio):
     )
     return completion.choices[0].message.content
 
-def generateQuestions(inputs,studentInfo=""):
+def generateQuestions(inputs,studentInfo="", language="dutch"):
     '''
     Generates a list of questions to ask the students
     inputs: (str) any information about the story, can include plot points, motivations, characters, etc
@@ -162,13 +162,14 @@ def generateQuestions(inputs,studentInfo=""):
         {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": inputs},
         {"role": "system", "content": studentInfo},
-        {"role": "system", "content": "Create a list of 5 questions."},
+        {"role": "system", "content": f"Create a list of 5 questions in {language}."},
         {"role": "system", "content": "Make sure the questions are conversational and fit for an 8 year old."}
     ],
     temperature= 1
     )
     return completion.choices[0].message.content 
 
+# not currently in use
 def generateObservations(inputs,studentInfo=""):
     '''
     Generates a list of observations about the story and/or the student
@@ -189,6 +190,7 @@ def generateObservations(inputs,studentInfo=""):
     )
     return completion.choices[0].message.content 
 
+# not currently in use
 def generateJokes(inputs,studentInfo=""):
     '''
     Generates jokes about the story and/or the student
@@ -209,6 +211,7 @@ def generateJokes(inputs,studentInfo=""):
     )
     return completion.choices[0].message.content 
 
+# not currently in use
 def reorderResponses(responses):
     '''
     Reorders the questions based on importance 
@@ -244,7 +247,8 @@ def translate(text, targetLanguage="Dutch"):
     )
     return completion.choices[0].message.content
 
-def pipeline(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True, NEW_Qs= True, NEW_Obs= True, NEW_Jokes=True):
+# not currently in use
+def pipeline_to_reorder(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True, NEW_Qs= True, NEW_Obs= True, NEW_Jokes=True):
     '''
     Generates questions based on a summary and the name/ id of the student, running all intermediate functions
     summary: (str) a text summary of a section of a book
@@ -282,7 +286,7 @@ def pipeline(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True, NEW_Qs= 
 
     return questions+observations+jokes
 
-def pipeline2(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True):
+def pipeline(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True, NEW_Qs=True):
     '''
     Generates questions based on a summary and the name/ id of the student, running all intermediate functions
     summary: (str) a text summary of a section of a book
@@ -290,6 +294,7 @@ def pipeline2(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True):
     studentName: (str) name/id of student
     NEW_TEXT: (bool) false if motivations and plot checkpoints already exist, true to generate new ones, true by default
     NEW_STUDENT: (bool) false if student connection to plot already exists, true to generate new one, true by default
+    
     Returns string containing questions
     '''
     if NEW_TEXT:
@@ -306,15 +311,26 @@ def pipeline2(summary, text, studentId, NEW_TEXT=True, NEW_STUDENT=True):
         save("studentConnection", text, studentConnections(plot,char,moti,student))
     connect = get("studentConnection", text)
 
-    return generateQuestions(plot + moti+ char, student+connect)
+    if NEW_Qs:
+        save("Questions", text, generateQuestions(plot + moti+ char, student+connect))
+    questions= get("Questions", text)
 
-def addFlavour(questions):
+    return addFlavour(questions,student+connect)
+
+def addFlavour(questions, studentInfo, language="dutch"):
+    '''
+    Adds observations, follow ups and jokes to questions
+    questions: (str) a list of questions
+    studentInfo: 
+    Returns string containing questions with pre and post question text
+    '''
     completion = client.chat.completions.create(
     model="gpt-4",
     messages=[
         {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": questions},
-        {"role": "system", "content": "Based on the given questions, add observations to lead into the questions and possible follow-up questions. Add additional jokes as follow up or add humor wherever appropriate."},
+        {"role": "system", "content": f"For each of the questions, add (in {language}) observations to lead into the questions and possible follow-up questions. Add jokes as an additional follow-up or add humor to the observation. Explicitly state which part is the observation, the questions and the joke. The user will tell you about the student you are talking to."},
+        {"role": "user", "content": studentInfo},
         {"role": "system", "content": "Make sure the text is conversational and fit for an 8 year old."}
     ],
     temperature= 1

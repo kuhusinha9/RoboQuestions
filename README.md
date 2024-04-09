@@ -25,11 +25,20 @@ This is what is the main script to run
 ### steps.py
 The subcomponents and API calls are in this file
 
-### json_converter.py
-This converts data in json files to string scripts
+### studentDataScripting.py
+This converts data in json or csv files to string scripts
+
+### file_handling.py
+This contains functions for saving or working with existing data or checkpoints
+
+### tests.py
+alternate to main.py for experimentation
+
+### outputs
+This folder contains function outputs for final use
 
 ### data
-This folder contains data about students or the robot
+This folder contains data about students or any other data files
 
 ### stories
 This folder contains the chapters, summaries or book texts
