@@ -325,7 +325,7 @@ def addFlavour(questions, studentInfo, language="dutch"):
     messages=[
         {"role": "system", "content": DEFAULT_INFO},
         {"role": "system", "content": questions},
-        {"role": "system", "content": f"For each of the questions, add (in {language}) observations to lead into the questions and possible follow-up questions. Add jokes as an additional follow-up or add humor to the observation. Explicitly state which part is the observation, the questions and the joke. The user will tell you about the student you are talking to."},
+        {"role": "system", "content": f"For each of the questions, add (in {language}) observations to lead into the questions and possible follow-up questions. Add jokes as an additional follow-up or add humor to the observation. Explicitly state which part is the observation, the questions and the joke, and number each of them. The user will tell you about the student you are talking to."},
         {"role": "user", "content": studentInfo},
         {"role": "system", "content": "Make sure the text is conversational and fit for an 8 year old."}
     ],

@@ -1,18 +1,31 @@
-Observation: Hey, houd je van voetbal en zwemmen, net als Floor in "De regels van Floor"! Floor is avontuurlijk en creatief, net als de karakters in je favoriete boeken zoals "Secret Seven" en "The Lightning Thief". Trouwens, Floor's regels bedenken doet me een beetje denken aan het oplossen van mysteries, net zoals in "Famous Five". Klinkt als een match, he?
+Observation 1: Ik heb gehoord dat je graag avontuurlijke en mysterieuze boeken leest, zoals Secret Seven, Famous Five en The Lightning Thief. Dat is echt gaaf! "De regels van Floor" is ook een soort avontuur, maar dan een beetje anders. Floor is een grappig personage die haar eigen regels maakt.
 
-Question 1: Welke regel van Floor vind je het leukst en waarom?
-- Follow-Up Question: Klinkt als een interessante regel! Zou je het leuk vinden om die regel zelf in het dagelijkse leven te volgen?
+Question 1:Nu ik dat zo zeg, wat vind je tot nu toe het leukste aan het boek "De regels van Floor"? En waarom?
 
-Question 2: Als je kon, welke avontuur uit "De regels van Floor" zou je dan zelf willen beleven?
-- Follow-Up Question: Wow, dat klinkt als een groot avontuur! Wat zou je doen als je in die situatie zou zijn?
+Follow Up 1:Als je een avontuur in het boek leuk vond, wat vond je er dan zo leuk aan? 
 
-Question 3: Welke regels zou je zelf willen maken, net als Floor?
-- Follow-Up Question: Dat zijn coole regels! Hm, ik vraag me af hoe Goldie, je hond, over deze regels zou denken?
+Observation 2:Ik hoorde dat jij ook voetbalt en zwemt, je zit dus niet graag stil! Floor maakt ook altijd van alles mee in haar boeken.
 
-Question 4: Welke situaties uit het boek doen je denken aan je eigen leven?
-- Follow-Up Question: Echt waar? Kun je me meer vertellen over die keer dat iets soortgelijks jou overkwam?
+Question 2:Zou jij zelf ook regels zoals Floor willen bedenken? Zo ja, wat zou jouw eerste regel zijn?
 
-Question 5: Ken je iemand die net zo avontuurlijk en dapper is als Floor?
-- Follow-Up Question: Klinkt alsof je ontzag hebt voor die persoon! Kan je me er meer over vertellen?
+Follow Up 2:Zou deze regel helpen tijdens voetbal of zwemmen?
 
-Joke: Wist je dat boeken nooit koud worden? Ze hebben altijd een dikke jas aan! (boekenjassen) Dat is precies zoals Stampot he, die houdt je ook lekker warm!
+Observation 3:Ik zie dat je ook van stamppot houdt. Nu dat je het zegt, ik hou ook van de aardappels in stamppot. Maar weet je wat ik het leukst vind? De worst - het is net alsof ik m'n eigen brandstof tank bij. 
+
+Question 3:Welke regel van Floor vind je het grappigst en waarom?
+
+Follow Up 3:Zou je een speciale stamppotregel willen bedenken?
+
+Joke 1:Waarom eten robots nooit stamppot? Omdat wij geen maag hebben om het te verteren! 
+
+Observation 4:Je hebt een hond genaamd Goldie, wat leuk! In het boek "De regels van Floor" zien we Floor ook interacteren met haar vrienden en familie.
+
+Question 4:Zie je overeenkomsten tussen jezelf en Floor of een ander personage in het boek?
+
+Follow Up 4:Zou Goldie iets gemeen hebben met een personage uit het boek?
+
+Observation 5:Ik heb gehoord dat je van avontuur houdt, zowel in het echte leven als in boeken.
+
+Question 5:Als je een avontuur zou kunnen beleven zoals in een van je favoriete boeken, welk avontuur zou dat dan zijn?
+
+Follow Up 5:Zou je Goldie meenemen op je avontuur?
