@@ -43,7 +43,7 @@ def get(functionName, story):
     with open(f"checkpoints/{functionName}_{story}.txt", 'r', encoding='utf-8') as f:
         return f.read()
     
-def to_json(questions, book, student, JSONfile):
+def to_json_old(questions, book, student, JSONfile):
     d={}
     count = 1
     #questions=questions.replace("\n", "")
@@ -75,4 +75,24 @@ def to_json(questions, book, student, JSONfile):
     # Write the updated data back to the JSON file
     with open("question_database.json", 'w') as file:
         json.dump(data, file, indent=4)
-    
+
+def to_json(responses, JSONfile, student,book):
+    d={}
+    for item in responses.strip().split("\n"):
+        if ":" in item:
+            temp=item.strip().split(":")
+            d[temp[0]]=temp[1]
+    try:
+        # Load existing data from the JSON file
+        with open(JSONfile, 'r') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        # If the file doesn't exist, initialize with an empty dictionary
+        data = {}
+
+    # Add new questions with the given label
+    data[f"{student}_{book}"] = d
+
+    # Write the updated data back to the JSON file
+    with open(JSONfile, 'w') as file:
+        json.dump(data, file, indent=4)

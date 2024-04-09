@@ -22,6 +22,9 @@ OPENAI_API_KEY = 'your_key_here'
 ### main.py
 This is what is the main script to run
 
+### tests.py
+The alternate to main.py for experimentation
+
 ### steps.py
 The subcomponents and API calls are in this file
 
@@ -31,8 +34,7 @@ This converts data in json or csv files to string scripts
 ### file_handling.py
 This contains functions for saving or working with existing data or checkpoints
 
-### tests.py
-alternate to main.py for experimentation
+### translations.py
 
 ### outputs
 This folder contains function outputs for final use

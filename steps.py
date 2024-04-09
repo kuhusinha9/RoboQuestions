@@ -5,10 +5,6 @@ from dotenv import load_dotenv
 from file_handling import get, save
 from studentDataScripting import json_data, csv_data
 
-# TODO:  questions (no followups)-> add observations, followups and jokes/ questions, followups, observations to ChatGPT to generate flow 
-# flow based on engagingness 
-# add notes for thesis
-
 load_dotenv()
 client = OpenAI(
   api_key=os.environ["OPENAI_API_KEY"]
@@ -337,7 +333,7 @@ def addFlavour(questions, studentInfo, language="dutch"):
     )
     return completion.choices[0].message.content
 
-# not currently in use
+# TODO: update prompt
 def superPrompt(inputs,studentInfo=""):
     '''
     TODO: create a single GPT call to generate questions
